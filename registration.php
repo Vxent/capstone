@@ -19,87 +19,89 @@ if (isset($_SESSION["user"])) {
     background-size: cover;
     background-position: center;">
     <div class=" row container container-fluid "></div>
-        <div class="div2 container text-center " style="background-image: url('green.jpg');  background-repeat:no-repeat;
-        background-size: cover;  
-        background-position: center; ">
-                <img src="logo.png" alt="" width="45%">
-                <h1 class="reg">Registration</h1>
-  
-            <?php
-            if (isset($_POST["submit"])) {
-                $fullName = $_POST["fullname"];
-                $email = $_POST["email"];
-                $password = $_POST["password"];
-                $passwordRepeat = $_POST["repeat_password"];
-           
-                $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+       <div class="div2 container text-center " style="background-image: url('green.jpg'); background-repeat:no-repeat; background-size: cover; background-position: center;">
+    <img src="logo.png" alt="" width="45%">
+    <h1 class="reg">Registration</h1>
 
-                $errors = array();
-           
-                if (empty($fullName) OR empty($email) OR empty($password) OR empty($passwordRepeat)) {
-                    array_push($errors,"All fields are required");
-                }
-                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                    array_push($errors, "Email is not valid");
-                }
-                if (strlen($password)<8) {
-                    array_push($errors,"Password must be at least 8 charactes long");
-                }
-                if ($password!==$passwordRepeat) {
-                 array_push($errors,"Password does not match");
-                }
-                 require_once "database.php";
-                $sql = "SELECT * FROM users WHERE email = '$email'";
-                $result = mysqli_query($conn, $sql);
-                $rowCount = mysqli_num_rows($result);
-                if ($rowCount>0) {
-                    array_push($errors,"Email already exists!");
-                }
-                if (count($errors)>0) {
-                foreach ($errors as  $error) {
-                    echo "<div class='alert alert-danger'>$error</div>";
-                }
-                }else{
-            
-                $sql = "INSERT INTO users (full_name, email, password) VALUES ( ?, ?, ? )";
-                $stmt = mysqli_stmt_init($conn);
-                $prepareStmt = mysqli_stmt_prepare($stmt,$sql);
-                if ($prepareStmt) {
-                     mysqli_stmt_bind_param($stmt,"sss",$fullName, $email, $passwordHash);
-                    mysqli_stmt_execute($stmt);
-                    echo "<div class='alert alert-success'>You are registered successfully.</div>";
-                }else{
-                    die("Something went wrong");
-                }
-                }
-          
+    <?php
+    if (isset($_POST["submit"])) {
+        $fullName = $_POST["fullname"];
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+        $passwordRepeat = $_POST["repeat_password"];
+        $contact = $_POST["contact"];
+        $address = $_POST["address"];
 
-                }
-                ?>
-            <form action="registration.php" method="post" class="form2" >
-                <div class="form-group text-center">
-                    <input type="text" class="form-control" name="fullname" placeholder="Full Name:">
-                </div>
-                <div class="form-group">
-                    <input type="emamil" class="form-control" name="email" placeholder="Email:">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" name="password" placeholder="Password:">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" name="repeat_password" placeholder="Repeat Password:">
-                </div>
-                <div class="form-btn text-center pb-3" style="text-align: center;">
-                    <input type="submit" class=" btn-grad3 btn-primary text-dark" value="Register" name="submit">
-                </div>
-                <div class="text-center">
-                    <p>Already Registered <a href="login.php" style="color:  #c61aff;"><b> Login Here</b></a></p>
-                </div>
-            </form>
-            
+        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+        $errors = array();
+
+        if (empty($fullName) OR empty($email) OR empty($password) OR empty($passwordRepeat) OR empty($contact) OR empty($address)) {
+            array_push($errors, "All fields are required");
+        }
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            array_push($errors, "Email is not valid");
+        }
+        if (strlen($password) < 8) {
+            array_push($errors, "Password must be at least 8 characters long");
+        }
+        if ($password !== $passwordRepeat) {
+            array_push($errors, "Password does not match");
+        }
+
+        require_once "database.php";
+        $sql = "SELECT * FROM users WHERE email = '$email'";
+        $result = mysqli_query($conn, $sql);
+        $rowCount = mysqli_num_rows($result);
+        if ($rowCount > 0) {
+            array_push($errors, "Email already exists!");
+        }
+        if (count($errors) > 0) {
+            foreach ($errors as $error) {
+                echo "<div class='alert alert-danger'>$error</div>";
+            }
+        } else {
+            $sql = "INSERT INTO users (full_name, email, password, contact, address) VALUES (?, ?, ?, ?, ?)";
+            $stmt = mysqli_stmt_init($conn);
+            $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
+            if ($prepareStmt) {
+                mysqli_stmt_bind_param($stmt, "sssss", $fullName, $email, $passwordHash, $contact, $address);
+                mysqli_stmt_execute($stmt);
+                echo "<div class='alert alert-success'>You are registered successfully.</div>";
+            } else {
+                die("Something went wrong");
+            }
+        }
+    }
+    ?>
+    <form action="registration.php" method="post" class="form2">
+        <div class="form-group text-center">
+            <input type="text" class="form-control" name="fullname" placeholder="Full Name:">
         </div>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <div class="form-group">
+            <input type="email" class="form-control" name="email" placeholder="Email:">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password:">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="repeat_password" placeholder="Repeat Password:">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="contact" placeholder="Contact:">
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" name="address" placeholder="Address:"></textarea>
+        </div>
+        <div class="form-btn text-center pb-3" style="text-align: center;">
+            <input type="submit" class="btn-grad3 btn-primary text-dark" value="Register" name="submit">
+        </div>
+        <div class="text-center">
+            <p>Already Registered <a href="login.php" style="color: #c61aff;"><b> Login Here</b></a></p>
+        </div>
+    </form>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-    </div>  
 </body>
 </html>
