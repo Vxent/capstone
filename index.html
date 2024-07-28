@@ -6,12 +6,32 @@
     <title>Kween P Sports</title>
     <!-- tailwind css cdn -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="logo1.png" type="image/x-icon">
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:wght@500;700;800&display=swap" rel="stylesheet">
+   <!-- FONTS ZEN DOTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+   h1{
+  font-family: 'Zen Dots', cursive;
+}
+.drop {
+    
+  font-family: 'Zen Dots', cursive;
+}
+.your {
+    font-family: 'Zen Dots', cursive;
+}
+</style>
 <body>
     <nav class="bg-black shadow-md top-0 left-0 w-full z-50">  
         <div class="container mx-auto px-4 ">
@@ -31,7 +51,7 @@
                 <div class="hidden md:flex space-x-4 p-2">
                   <a href="#threats" class="hidden md:inline-block text-gray-700 px-2 py-1 font-abhaya-libre uppercase text-white tracking-wider px-4 xl:px-8 py-2 text-lg hover:underline">Services</a>
                   <a href="contacts.html" class="hidden md:inline-block text-gray-700 px-2 py-1 font-abhaya-libre uppercase text-white tracking-wider px-4 xl:px-8 py-2 text-lg hover:underline">Contacts</a>
-                  <a href="logout.php" class="inline-block font-bold bg-orange-400 text-white py-2 px-6 rounded hover:bg-orange-300 transition">Logout</a>
+                  <a href="logout.php" class="border-2 border-white bg-black text-white py-2 px-4 rounded">Logout</a>
                 </div>
                 <div class="navbar-burger md:hidden flex items-center">
                   <button id="navbar-toggle" class="focus:outline-none">
@@ -64,20 +84,23 @@
             <!-- 3d Section or Headers -->
       <section id="home" style="background-image: url(bg.png); background-size: cover; background-repeat: no-repeat;">
         <div class="max-w-7xl h-full mx-auto p-20">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 ">
                 <!-- Text Section -->
                 <div class="text-center lg:text-left">
-                    <h1 class="text-5xl font-bold text-white">Customized Sportswear</h1><br>
-                    <div class="dropping-texts  drop">
-                      <div class="text-orange-500 font-bold ">Team</div>
-                      <div class="text-green-500 font-bold">Style</div>
-                      <div class="text-blue-500 font-bold">Jersey</div>
-                      <div class="text-red-500 font-bold">Game!</div>
-                    </div>
-                    <br> 
-                    <br>
+                    <h1 class="text-2xl text-white your pb-5">
+                        WELCOME TO KWEEN P
+                    </h1>
+                    <main class="container">                       
+                        <h2  class="your text-5xl">Customized Your:</h2>
+                        <div class="animation" style="">
+                          <div class="first text-yellow-500"><div>TEAM</div></div>
+                          <div class="second text-yellow-500"><div>GAME</div></div>
+                          <div class="third text-yellow-500"><div>JERSEY</div></div>
+                        </div>  
+                    <div class="pt-14">
                     <a href="#" class="inline-block bg-black text-white py-2 px-4 rounded hover:bg-orange-300 transition">3d Customization &rarr;</a>
-                  
+                   </div>   
+                 
                 </div>
                 
                 <!-- Image Section -->
@@ -90,11 +113,11 @@
       </section>
       <section>
          <!-- Quality -->
-  <section class="container mx-auto px-4 py-10">
+  <section class="container mx-auto px-4 py-10 bg-black">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center shadow-lg pb-2">
         <div class="transform transition-transform hover:scale-105">
             <div class="flex justify-center mb-4">
-                <div class="bg-yellow-500 text-white rounded-full p-4">
+                <div class=" ">
                     <i class="fas fa-check fa-2x"></i>
                 </div>
             </div>
@@ -105,7 +128,7 @@
         
         <div class="transform transition-transform hover:scale-105">
             <div class="flex justify-center mb-4">
-                <div class="bg-yellow-500 text-white rounded-full p-4">
+                <div class="">
                     <i class="fas fa-heart fa-2x"></i>
                 </div>
             </div>
@@ -115,7 +138,7 @@
         </div>
         <div class="transform transition-transform hover:scale-105">
             <div class="flex justify-center mb-4">
-                <div class="bg-yellow-500 text-white rounded-full p-4">
+                <div class="">
                     <i class="fas fa-star fa-2x"></i>
                 </div>
             </div>
@@ -127,13 +150,13 @@
     
       </div>
 
+      <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+    
       </section>
       
       
 
 
-
-    
     
 
 
