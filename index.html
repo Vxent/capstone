@@ -3,105 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="author"> 
-    <meta name="3d Jersey" content="3d Customization">
-
     <title>Kween P Sports</title>
-
-    <link rel="icon" href="rhi.png" class="rounded-full" type="image/x-icon"/>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <!-- fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-   
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- tailwind css cdn -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- fonts -->
-
-
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    body {
-        font-family: 'Roboto', sans-serif;
-    }
-</style>
 <body>
+    <nav class="bg-black shadow-md top-0 left-0 w-full z-50">  
+        <div class="container mx-auto px-4 ">
+            <div class="flex justify-between items-center py-2 ">
+              <div class="flex-1 flex justify-start">
+                <div class="hidden md:flex space-x-4 p-2">
+                  <a href="#Main" class="hidden md:inline-block font-abhaya-libre uppercase text-white tracking-wider px-4 xl:px-8 py-2 text-lg hover:underline">Home</a>
+                  <a href="#varieties" class="hidden md:inline-block text-gray-700 px-2 py-1  font-abhaya-libre uppercase text-white tracking-wider px-4 xl:px-8 py-2 text-lg hover:underline">Sports</a>
+                  <a href="#about" class="hidden md:inline-block text-gray-700 px-2 py-1 font-abhaya-libre uppercase text-white tracking-wider px-4 xl:px-8 py-2 text-lg hover:underline">About</a>
+                </div>
+              </div>
+              <div class="flex-1 flex justify-center">
+                <div class="text-center">
+                  <img src="logo1.png" alt="Ricehub Logo" width="200px" class="h-20">  </div>
+              </div>
+              <div class="flex-1 flex justify-end">
+                <div class="hidden md:flex space-x-4 p-2">
+                  <a href="#threats" class="hidden md:inline-block text-gray-700 px-2 py-1 font-abhaya-libre uppercase text-white tracking-wider px-4 xl:px-8 py-2 text-lg hover:underline">Services</a>
+                  <a href="contacts.html" class="hidden md:inline-block text-gray-700 px-2 py-1 font-abhaya-libre uppercase text-white tracking-wider px-4 xl:px-8 py-2 text-lg hover:underline">Contacts</a>
+                  <a href="logout.php" class="inline-block font-bold bg-orange-400 text-white py-2 px-6 rounded hover:bg-orange-300 transition">Logout</a>
+                </div>
+                <div class="navbar-burger md:hidden flex items-center">
+                  <button id="navbar-toggle" class="focus:outline-none">
+                    <svg class="w-6 h-6 bg-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h34M4 24h34m-7 6h7"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div id="navbar-menu" class="navbar-menu md:hidden">
+              <a href="#Main" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Home</a>
+              <a href="#varieties" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Sports</a>
+              <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">About</a>
+              <a href="#threats" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Services</a>
+              <a href="contacts.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contacts</a>
+              <a href="logout.php" class="inline-block font-bold bg-orange-400 text-white py-2 px-6 rounded hover:bg-orange-300 transition">Logout</a>
+            </div>
+          </div>
+     </nav>
+    
+      <script>
+        document.getElementById('navbar-toggle').addEventListener('click', function() {
+          var menu = document.getElementById('navbar-menu');
+          menu.style.display = menu.style.display === 'none' || menu.style.display === '' ? 'block' : 'none';
+        });
+        
+      </script>
 
-    <section id="hero" class="">
-        <!-- NAVIGaTION -->
-        <nav class="bg-white shadow-md">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center h-16">
-                    <!-- Logo -->
-                    <div class="flex-shrink-0">
-                        <a href="#">
-                            <img class="h-10 w-40" src="logo.png" alt="Logo">
-                        </a>
+            <!-- 3d Section or Headers -->
+      <section id="home" style="background-image: url(bg.png); background-size: cover; background-repeat: no-repeat;">
+        <div class="max-w-7xl h-full mx-auto p-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <!-- Text Section -->
+                <div class="text-center lg:text-left">
+                    <h1 class="text-5xl font-bold text-white">Customized Sportswear</h1><br>
+                    <div class="dropping-texts  drop">
+                      <div class="text-orange-500 font-bold ">Team</div>
+                      <div class="text-green-500 font-bold">Style</div>
+                      <div class="text-blue-500 font-bold">Jersey</div>
+                      <div class="text-red-500 font-bold">Game!</div>
                     </div>
-                    <!-- Navigation Links -->
-                    <div class="flex-grow">
-                        <div class="flex justify-center space-x-8">
-                            <a href="#">
-                                <p class="text-gray-900 inline-flex items-center px-8 pt-3 border-b-2 border-transparent hover:border-gray-300">HOME</p>
-                            </a>
-                            <a href="#" >
-                                <p class="text-gray-900 inline-flex items-center px-8 pt-3 border-b-2 border-transparent hover:border-gray-300">SPORTS</p>
-                            </a>
-                            <a href="#">
-                                <p class="text-gray-900 inline-flex items-center px-8 pt-3 border-b-2 border-transparent hover:border-gray-300">SERVICES</p>
-                            </a>
-                            <a href="#">
-                                <p class="text-gray-900 inline-flex items-center px-8 pt-3 border-b-2 border-transparent hover:border-gray-300">ABOUT</p>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Sign Up Button -->
-                    <div class="flex-shrink-0">
-                        <a href="login.php">
-                            <button class="text-black bg-white px-4 py-2 rounded-md border-2 border-black">Sign Up</button>
-                        </a>
-                    </div>
+                    <br> 
+                    <br>
+                    <a href="#" class="inline-block bg-black text-white py-2 px-4 rounded hover:bg-orange-300 transition">3d Customization &rarr;</a>
+                  
+                </div>
+                
+                <!-- Image Section -->
+                <div class="flex justify-center lg:justify-end">
+                    <img src="https://z-p3-cdn.fbsbx.com/v/t59.2708-21/452711556_1151645785949276_8970025079641874822_n.gif?_nc_cat=103&ccb=1-7&_nc_sid=cf94fc&_nc_eui2=AeEn7YxYLsxnEHls2vxzx3nYCQuVjL8l-rwJC5WMvyX6vAWJns6sVOX-GPLRYZrvv6WIrPGazHvwF4tlTIKkDe8s&_nc_ohc=H0FEdFE7tQQQ7kNvgFYV63E&_nc_ht=z-p3-cdn.fbsbx.com&oh=03_Q7cD1QH5ncn7lhAinhk8N-uDZ48zqwdaGLaw_zXy0Q-BQJcWjA&oe=66A6596A" alt="Sportswear" class="w-full h-96">
                 </div>
             </div>
+        </div>
+        
+      </section>
+      <section>
+         <!-- Quality -->
+  <section class="container mx-auto px-4 py-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center shadow-lg pb-2">
+        <div class="transform transition-transform hover:scale-105">
+            <div class="flex justify-center mb-4">
+                <div class="bg-yellow-500 text-white rounded-full p-4">
+                    <i class="fas fa-check fa-2x"></i>
+                </div>
+            </div>
+            <h2 class="text-2xl mb-2">Quality Measure</h2>
+            <p class="text-gray-700 text-sm">The whole production process done with utmost care and thorough quality control at each stage of processing.</p>
+            <p class="text-2xl font-bold">100%</p><br>
+        </div>
+        
+        <div class="transform transition-transform hover:scale-105">
+            <div class="flex justify-center mb-4">
+                <div class="bg-yellow-500 text-white rounded-full p-4">
+                    <i class="fas fa-heart fa-2x"></i>
+                </div>
+            </div>
+            <h2 class="text-2xl mb-2">Product Quality</h2>
+            <p class="text-gray-700 text-sm">Rice offers a wide range of health benefits and it serves as a dietary staple for more than 3.5 billion people worldwide.</p>
+            <p class="text-2xl font-bold">100%</p>
+        </div>
+        <div class="transform transition-transform hover:scale-105">
+            <div class="flex justify-center mb-4">
+                <div class="bg-yellow-500 text-white rounded-full p-4">
+                    <i class="fas fa-star fa-2x"></i>
+                </div>
+            </div>
+            <h2 class="text-2xl mb-2">Excellent Service</h2>
+            <p class="text-gray-700 text-sm">We provide top-notch service with dedicated support to ensure customer satisfaction at all times.</p>
+            <p class="text-2xl font-bold">100%</p>
+        </div>
+    </div>
+    
+      </div>
+
+      </section>
+      
+      
+
+
+
+    
+    
+
+
+
+<!-- footer section -->
+ <!-- component -->
+<!-- This is an example component -->
+<div class=" bg-gray-900">
+  <div class="max-w-2xl mx-auto text-white py-10">
+      <div class="text-center">
+          <h3 class="text-3xl mb-3"> Download our fitness app </h3>
+          <p> Stay fit. All day, every day. </p>
+          <div class="flex justify-center my-10">
+              <div class="flex items-center border w-auto rounded-lg px-4 py-2 w-52 mx-2">
+                  <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" class="w-7 md:w-8">
+                  <div class="text-left ml-3">
+                      <p class='text-xs text-gray-200'>Download on </p>
+                      <p class="text-sm md:text-base"> Google Play Store </p>
+                  </div>
+              </div>
+              <div class="flex items-center border w-auto rounded-lg px-4 py-2 w-44 mx-2">
+                  <img src="https://cdn-icons-png.flaticon.com/512/888/888841.png" class="w-7 md:w-8">
+                  <div class="text-left ml-3">
+                      <p class='text-xs text-gray-200'>Download on </p>
+                      <p class="text-sm md:text-base"> Apple Store </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="mt-28 flex flex-col md:flex-row md:justify-between items-center text-sm text-gray-400">
+          <p class="order-2 md:order-1 mt-8 md:mt-0"> &copy; Beautiful Footer, 2021. </p>
+          <div class="order-1 md:order-2">
+              <span class="px-2">About us</span>
+              <span class="px-2 border-l">Contact us</span>
+              <span class="px-2 border-l">Privacy Policy</span>
+          </div>
+      </div>
+  </div>
+</div>
+    <!-- <footer class="text-center pt-5 mt-5">
+        <nav>
+    
+            <div class="mt-3 md:mt-4">
+                <ul class=" sm:flex sm:place-content-center gap-5 ">
+                        <li class="pb-2"><a class="hover:text-red-500 text-lg pr-3" href="./index.html">Home</a></li>
+                        <li class="pb-2"><a class="hover:text-red-500 text-lg pr-3" href="./pages/explore.html">Explore</a></li>
+                        <li class="pb-2"><a class="hover:text-red-500 text-lg pr-3" href="./pages/contact.html">Contact</a></li>
+                        <li class="pb-2"><a class="hover:text-red-500 text-lg pr-3" href="./pages/donate.html">Donate</a></li>
+                        <li class="pb-2"><a class="hover:text-red-500 text-lg pr-3" href="./pages/about.html">About</a></li>
+                </ul>
+            </div>
         </nav>
-        
-           </section>
-           <!-- PICTURE OR HOME SECTION -->
-           <section id="home" style="background-image: url('bg.png'); background-repeat: no-repeat; background-size: cover;">
-             <div class="container">
-               <div class="row">
-                 <div class="col-lg-5 col-sm-10  pt-14 text-white ">
-                    
-                   <h1 class="shadow-lg font-bold pt-14 capitalize">Customized sportswear
-                    for you and your team</h1>
-                    <p class="pb-10">With our 3D configurator, you can easily design professional-quality sportswear made just for you.
-                        Why not kit out your club too with our attractive discounts.
-                        </p>
-                        <a href="https://tshirt3d.vercel.app/" ><button class="text-white bg-black px-4 py-2 rounded-md">  3D CUSTOMIZATION</button>
-                          
-                        </a>
-                        <!-- https://www.spized.com/en/configurator?cfg-id=a44e6a658d93173d5413d68f5cebf7c232b6637f18b99c11154359efe430eaf7dee7120bac474334b3a03f0f129db8864475f18093ab3170c3893244ad24e488&uuid=ef084dd32a62486ea75f4ff31e1dedc1 -->
-               
-                 </div>
-                 <div class="col-lg-7 col-sm-2 px-5 py-5">
-                    <div>
-                        <img src="3d.png" alt="">
-                    </div>
-               
-                 </div>
-                  
-               </div>
-                
-                  
-          
-        
-             </div>
-        
-                
-           </section>
+    </footer> -->
 </body>
 </html>

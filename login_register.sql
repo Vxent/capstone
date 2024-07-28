@@ -38,7 +38,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `full_name`, `email`, `password`) VALUES
+INSERT INTO `users` (`id`, `full_name`, `email`, `password`,`contact`,`address`) VALUES
 (0, 'Vincent LEe', 'vincentleemtiongco@gnc.edu.ph', '$2y$10$MnlwRDRr4F/mv011xL.A/u20NzKfoGTbSW1WXefEqTW4sqAFz0DA6'),
 (0, 'Vincent Lee Tiongco', 'vincentlee.tiongco@gnc.edu.ph', '$2y$10$sQ8vJJ2tsIU2w2Vsd9mVAO.iIrN0a6qIV9ZYmhXjLgu85r3WtOdD6'),
 (0, 'BODS WAVE ', 'asd@gmail.com', '$2y$10$L6b4KopbYMH.lgq/P9.IuOw3cXDKV6ktezY3Bleik.zZAbHmTjjQi'),
